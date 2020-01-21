@@ -1,0 +1,23 @@
+citHeader("To cite Phecode in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Evaluating phecodes, clinical classification software, and ICD-9-CM codes for phenome-wide association studies in the electronic health record.",
+  author   = "Wei WQ, Bastarache L, Carroll RJ, Marlo JE, Osterman TJ, Gamazon ER, Cox NJ, Roden DM, Denny JC",
+  journal  = "PLoS One",
+  year     = 2017,
+  volume   = "12(7):e0175508",
+  url      = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175508",
+  textVersion = "Wei WQ, Bastarache L, Carroll RJ, Marlo JE, Osterman TJ, Gamazon ER, Cox NJ, Roden DM, Denny JC. Evaluating phecodes, clinical classification software, and ICD-9-CM codes for phenome-wide association studies in the electronic health record. PLoS One. 2017 Jul 7;12(7):e0175508. doi: 10.1371/journal.pone.0175508. eCollection 2017."
+)
+
+citEntry(
+  entry    = "Article",
+  title    = "Developing and Evaluating Mappings of ICD-10 and ICD-10-CM Codes to PheCodes",
+  author   = "Wu P, Gifford A, Meng X, Li X, Campbell H, Varley T, Zhao J, Carroll R, Bastarache L, Denny JC, Theodoratou E, Wei WQ.",
+  journal  = "JMIR Med Inform",
+  year     = 2019,
+  volume   = "10.2196/14325",
+  url      = "https://doi.org/10.2196/14325",
+  textVersion = "Wu P, Gifford A, Meng X, Li X, Campbell H, Varley T, Zhao J, Carroll R, Bastarache L, Denny JC, Theodoratou E, Wei WQ. Developing and Evaluating Mappings of ICD-10 and ICD-10-CM Codes to PheCodes.JMIR Med Inform. 2019 Sep 24. doi: 10.2196/14325"
+)
