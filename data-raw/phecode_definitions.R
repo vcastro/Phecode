@@ -6,12 +6,11 @@ download_extract(url = "https://phewascatalog.org/files/phecode_definitions1.2.c
                  exdir = "data-raw",
                  files = c("phecode_definitions1.2.csv"))
 
-Phecode_definitions <- read_csv("data-raw/phecode_definitions1.2.csv", 
+Phecode_definitions_src <- read_csv("data-raw/phecode_definitions1.2.csv", 
                          col_types = cols(.default = col_character()))
 
 
-Phecode_definitions <- Phecode_definitions %>% 
-  #as_tibble() %>% 
+Phecode_definitions_src <- Phecode_definitions_src %>% 
   mutate(sex = ifelse(is.na(sex), 'Both', sex)) %>% 
   select(phecode, phecode_desc = phenotype, phecode_class = category, phecode_class_number = category_number, sex, phecode_exclude_range) %>% 
   arrange(phecode)
@@ -36,8 +35,35 @@ spelling_fixes <- c(`Althete\'s foot` = "Athlete's foot",
                     `Urethral stricture due to infecton` = "Urethral stricture due to infection",
                     `Congenital anomalies of abdominal wall; diaphram` = "Congenital anomalies of abdominal wall; diaphragm")
 
-Phecode_definitions <- Phecode_definitions %>% 
-  mutate(phecode_desc = recode(phecode_desc, !!!spelling_fixes))
+# add definitions that are in mapping but missing from file
+# these are pulled from the online listing at https://phewascatalog.org/phecodes_icd10cm
 
+missing_definitions <- tribble(
+  ~phecode, ~phecode_desc,
+  "1010.1", "Screening for infectious and parasitic diseases",
+  "1010.2",	"Screening for malignant neoplasms",
+  "1010.3", "Screening for other diseases and disorders",
+  "1010.4", "Genetic Test",
+  "1010.5", "Potential health hazards related to communicable diseases potential health hazards related to communicable diseases",
+  "1010.6", "Persons encountering health services in circumstances related to reproduction",
+  "1010.7", "Persons with potential health hazards related to socioeconomic, psychosocial, and other circumstances",
+  "1089", "Acquired absence of limb",
+  "1090", "Acquired absence of organs"
+) %>% mutate(
+  phecode_class = "Other", phecode_class_number = "0", sex = "Both", phecode_exclude_range = NA
+)
+
+
+Phecode_definitions <- Phecode_definitions_src %>% 
+  mutate(phecode_desc = recode(phecode_desc, !!!spelling_fixes),
+         phecode_class = ifelse(is.na(phecode_class) | is.null(phecode_class) | phecode_class == "NULL", "Other", phecode_class)) %>% 
+  bind_rows(missing_definitions)
+
+
+# MOVE TO TEST: check all phecodes in map have a definition
+# Phecode_map %>% 
+#  anti_join(Phecode_definitions, by = "phecode") %>% 
+#  group_by(phecode) %>% 
+#  count()
 
 usethis::use_data(Phecode_definitions, overwrite = TRUE)

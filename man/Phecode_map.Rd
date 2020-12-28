@@ -4,12 +4,14 @@
 \name{Phecode_map}
 \alias{Phecode_map}
 \title{Phecode map}
-\format{A data frame with 152961 obs. and 3 variables:
+\format{
+A data frame with 152961 obs. and 3 variables:
 \describe{
   \item{code}{ICD-9 or ICD-10 codes}
   \item{phecode}{Phecode}
   \item{vocabulary_id}{ICD code version, either ICD9CM or ICD10CM}
-}}
+}
+}
 \source{
 \url{https://phewascatalog.org/files/phecode_icd9_map_unrolled.csv.zip}
 

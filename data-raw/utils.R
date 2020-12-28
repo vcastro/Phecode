@@ -8,3 +8,8 @@ download_extract <- function (url, exdir, files) {
   unzip(temp, exdir = exdir, junkpaths = TRUE, files = files)
   
 }
+
+
+like_match <- function (x1, x2) {
+  str_detect(x1, paste0("^", x2))
+}

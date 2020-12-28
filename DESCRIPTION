@@ -1,22 +1,22 @@
 Package: Phecode
 Title: Phecode definitions and mappings to ICD-9 and ICD-10 codes
-Version: 0.0.0.9000
+Version: 1.2
 Authors@R: 
     person(given = "Victor",
            family = "Castro",
            role = c("aut", "cre"),
            email = "vcastro@mgh.harvare.edu")
 Description: Phecode is a lightweight package containing the most recent 
-    Phecode definitions and their mappings to ICD-9 and ICD-10 as published
-    in the Vanderbilt PheWAS catalog \url{}.  Use these data to group 
+    Phecode definitions and their mappings to ICD-9 and ICD-10 codes as 
+    published in the Vanderbilt PheWAS catalog \url{}.  Use these data to group
     ICD-9 and ICD-10 codes from EHR data to PheCodes for PheWAS or other 
     analyses.  The PheWAS R package (\url{https://github.com/PheWAS/PheWAS}) 
-    provides additional functionality but this data is meant for easier use
-    and maintenance of Phecodes.  
+    provides additional functionality for running analysis.  This package is 
+    meant for easier use and maintenance of Phecodes.  
 License: GPL-3 + file LICENSE
 Depends: R (>= 2.10)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 URL: https://github.com/vcastro/Phecode, https://phewascatalog.org/
 BugReports: https://github.com/vcastro/Phecode/issues
