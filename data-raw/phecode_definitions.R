@@ -48,7 +48,8 @@ missing_definitions <- tribble(
   "1010.6", "Persons encountering health services in circumstances related to reproduction",
   "1010.7", "Persons with potential health hazards related to socioeconomic, psychosocial, and other circumstances",
   "1089", "Acquired absence of limb",
-  "1090", "Acquired absence of organs"
+  "1090", "Acquired absence of organs",
+  "305", "Eating disorders"
 ) %>% mutate(
   phecode_class = "Other", phecode_class_number = "0", sex = "Both", phecode_exclude_range = NA
 )
