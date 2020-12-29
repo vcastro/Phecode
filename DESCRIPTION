@@ -8,12 +8,13 @@ Authors@R:
            email = "vcastro@mgh.harvare.edu")
 Description: Phecode is a lightweight package containing the most recent 
     Phecode definitions and their mappings to ICD-9 and ICD-10 codes as 
-    published in the Vanderbilt PheWAS catalog \url{}.  Use these data to group
-    ICD-9 and ICD-10 codes from EHR data to PheCodes for PheWAS or other 
+    published in the Vanderbilt PheWAS catalog 
+    \url{https://phewascatalog.org/}. Use these data to group ICD-9 and 
+    ICD-10 diagnoses codes from EHR data to PheCodes for PheWAS or other 
     analyses.  The PheWAS R package (\url{https://github.com/PheWAS/PheWAS}) 
     provides additional functionality for running analysis.  This package is 
     meant for easier use and maintenance of Phecodes.  
-License: GPL-3 + file LICENSE
+License: GPL-3
 Depends: R (>= 2.10)
 Encoding: UTF-8
 LazyData: true
